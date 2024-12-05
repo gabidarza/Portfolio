@@ -9,7 +9,6 @@
     <div>
         <a href="/photos">Photos</a>
         <a href="/info">Info</a>
-        <a href="/info">Test for redeploy</a>
     </div>
 </nav>
 
@@ -24,7 +23,6 @@
         justify-content: space-between;
 
         > div {
-            background-color: lightblue;
 
             > a {
                 color: black;
