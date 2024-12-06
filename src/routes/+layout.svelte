@@ -14,11 +14,14 @@
     </div>
 </nav>
 
-<main id="main-render-children-inside">
+<main>
     {@render children()}
 </main>
 
 <style>
+    main {
+        padding: 16px;
+    }
     nav {
         background-color: rgba(255,255,255,.75);
         backdrop-filter: blur(16px);

@@ -1,7 +1,9 @@
 
 <div class="container">
 
-    <img src="/images/kite.jpg" alt="">
+    <a href="/photos/turkey">
+        <img src="/images/kite.jpg" alt="">
+    </a>
     <img src="/images/kite.jpg" alt="">
     <img src="/images/kite.jpg" alt="">
     
