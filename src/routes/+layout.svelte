@@ -4,7 +4,17 @@
     import "../app.css"
 
     const {children} = $props()
+
+    import '@fontsource/poppins/400.css';
+    import '@fontsource/poppins/500.css';
+    import '@fontsource/poppins/200.css';
 </script>
+
+<svelte:head> 
+    <title>
+        Gabi Darza
+    </title>
+</svelte:head>
 
 <nav>
     <a href="/">Gabi Darza</a>
