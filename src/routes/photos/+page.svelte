@@ -1,31 +1,13 @@
+<script lang="ts">
+	import { images } from '$lib';
 
-<div class="container">
+	const locations = [...new Set(images.map((image) => image.location))];
+</script>
 
-    <a href="/photos/turkey">
-        <img src="/images/kite.jpg" alt="">
-    </a>
-    <img src="/images/kite.jpg" alt="">
-    <img src="/images/kite.jpg" alt="">
-    
-</div>
-<style>
-    img {
-        max-width: 100%;
-        height: auto;
-    }
+<h1>Photos</h1>
 
-    .container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 16px;
-        padding: 16px;
-       
-        @media screen and (max-width: 600px) {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        @media screen and (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
-        }
-    }
-</style>
+{#each locations as location}
+	<a href={`photos/${location}`}>
+		<h2>{location}</h2>
+	</a>
+{/each}
