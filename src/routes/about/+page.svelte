@@ -70,8 +70,10 @@
 		}
 		@media (max-width: 640px) {
 			grid-template-columns: 1fr;
-			img {
+			.profile-image {
 				grid-row: -1;
+				width: 100%;
+				padding-top: 100%;
 			}
 			h1 {
 				font-size: 40px;
