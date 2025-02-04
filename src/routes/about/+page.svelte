@@ -1,5 +1,3 @@
-
-
 <div class="container">
 	<div>
 		<h1>Hello, <br />I am Gabi</h1>
@@ -27,37 +25,25 @@
 		</ul>
 	</div>
 
-		<img src="/images/gabi.jpeg" alt="Gabi" srcset="" />
-
+	<div class="profile-image"></div>
 </div>
 
 <style>
 	.container {
 		display: grid;
-        gap: 24px;
+		gap: 24px;
 		align-items: stretch;
-        align-content: stretch;
+		align-content: stretch;
 		height: 100%;
 		grid-template-columns: 1fr 1fr;
 		> div:first-child {
 			background: transparent;
 		}
- 
 
-        img {
-            display: inline;
-            max-width: 100%;
-            max-height: 100%;
-            min-width: 0;
-            min-height: 0;
-            width: 100%;
-            height: 100%;
-            align-self: stretch;
-            justify-self: stretch;
-            object-fit: cover;
-            object-position: center center;
-            background-color: red;
-        }
+		.profile-image {
+			background-image: url('/images/gabi.jpeg');
+			background-position: center;
+		}
 
 		h1 {
 			font-size: 100px;
@@ -65,13 +51,11 @@
 			font-weight: bold;
 			padding-top: 50px;
 			padding-bottom: 50px;
-
 		}
-    
 
 		p {
 			font-size: 16px;
-            line-height: 25px;
+			line-height: 25px;
 			padding-top: 10px;
 			padding-bottom: 10px;
 		}
@@ -84,15 +68,15 @@
 		.fa {
 			padding-right: 20px;
 		}
-        @media (max-width: 640px) {
-                grid-template-columns: 1fr;
-            img {
-                grid-row: -1;
-            }
-            h1 {
-                font-size: 40px;
-                padding: 20px 0;
-            }
-            }
+		@media (max-width: 640px) {
+			grid-template-columns: 1fr;
+			img {
+				grid-row: -1;
+			}
+			h1 {
+				font-size: 40px;
+				padding: 20px 0;
+			}
+		}
 	}
 </style>
