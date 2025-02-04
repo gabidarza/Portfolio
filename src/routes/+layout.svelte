@@ -14,19 +14,27 @@
     <title>
         Gabi Darza
     </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
 </svelte:head>
 
+<div class="layout-container">
 <nav>
     <a href="/">Gabi Darza</a>
     <div>
-        <a href="/photos">Photos</a>
-        <a href="/info">Info</a>
+        <a href="/photography">Photography</a>
+        <a href="/about">About</a>
     </div>
 </nav>
 
 <main>
     {@render children()}
 </main>
+</div>
 
 <style>
     main {
@@ -55,6 +63,13 @@
         }
 
         
+    }
+
+    .layout-container {
+        display: grid;
+        min-height: 100vh;
+        grid-template-rows: auto 1fr;
+
     }
 
 </style>
