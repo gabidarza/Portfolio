@@ -22,7 +22,6 @@
 <nav>
     <a href="/">Gabi Darza</a>
     <div>
-        <a href="/photography">Photography</a>
         <a href="/about">About</a>
     </div>
 </nav>
