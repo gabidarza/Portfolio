@@ -7,26 +7,30 @@
 
     import '@fontsource/poppins/400.css';
     import '@fontsource/poppins/500.css';
-    import '@fontsource/poppins/200.css';
+    import '@fontsource/poppins/500.css';
 </script>
 
 <svelte:head> 
     <title>
         Gabi Darza
     </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 </svelte:head>
 
+<div class="layout-container">
 <nav>
     <a href="/">Gabi Darza</a>
     <div>
-        <a href="/photos">Photos</a>
-        <a href="/info">Info</a>
+        <a href="/photography">Photography</a>
+        <a href="/about">About</a>
     </div>
 </nav>
 
 <main>
     {@render children()}
 </main>
+</div>
 
 <style>
     main {
@@ -55,6 +59,13 @@
         }
 
         
+    }
+
+    .layout-container {
+        display: grid;
+        min-height: 100vh;
+        grid-template-rows: auto 1fr;
+
     }
 
 </style>
