@@ -1,3 +1,7 @@
+<script>
+	import { Instagram, InstagramIcon, Mail } from 'lucide-svelte';
+</script>
+
 <div class="container">
 	<div>
 		<h1>Hello, <br />I am Gabi</h1>
@@ -10,16 +14,13 @@
 
 		<ul>
 			<li>
-				<i class="fa fa-instagram" style="font-size:24px"></i><a
-					href="https://www.instagram.com/darza.darkroom/"
-				>
+				<Instagram size={19} /><a href="https://www.instagram.com/darza.darkroom/" target="_blank">
 					darza.darkroom</a
 				>
 			</li>
 			<li>
-				<i class="fa fa-envelope-o" style="font-size:20px"></i><a
-					href="mailto:gabidarza@gmail.com"
-					class="icon mail">gabidarza@gmail.com</a
+				<Mail size={18} /><a href="mailto:gabidarza@gmail.com" class="icon mail"
+					>gabidarza@gmail.com</a
 				>
 			</li>
 		</ul>
@@ -29,6 +30,12 @@
 </div>
 
 <style>
+	ul li {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 8px;
+		align-items: center;
+	}
 	.container {
 		display: grid;
 		gap: 24px;
