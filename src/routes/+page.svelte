@@ -1,35 +1,47 @@
 <script lang="ts">
-	import {images} from '$lib'
+	import { images } from '$lib';
+
+	const locations = [...new Set(images.map((image) => image.location))];
 </script>
 
 <main>
+	<pre>
+		{JSON.stringify(locations, null, 2)}
+	</pre>
+
+	{#each locations as location}
+		<a href={`/photos/${location}`} style="background:lightblue;display:block;">{location}</a>
+		<br />
+	{/each}
+	<br />
+
+	<h2 style="background:lightblue;">Mexico</h2>
+	<br />
+	<h2 style="background:lightblue;">Spain</h2>
 	<!-- Photo Grid -->
 	<div class="grid-container">
 		<!-- <img alt="Beatle" src={Beatle} />
 		<img alt="Man" src={Man} /> -->
-	{#each images as image }
-		<img src={image.path} alt="" srcset="">
-	{/each}
+		{#each images as image}
+			<img src={image.path} alt="" srcset="" />
+		{/each}
 	</div>
 </main>
 
 <style>
-
 	img {
-            max-width: 100%;
-            height: auto;
-			border-radius: 3px;
-        }
+		max-width: 100%;
+		height: auto;
+		border-radius: 3px;
+	}
 
- .grid-container {
-        display: grid;
+	.grid-container {
+		display: grid;
 		gap: 24px;
-		grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		justify-items: center;
 		align-items: center;
-
-        
-    } 
+	}
 
 	.grid-container {
 		column-width: 240px;
@@ -37,26 +49,5 @@
 
 	main {
 		padding: 16px;
-	}
-	nav {
-		background-color: rgba(255, 255, 255, 0.75);
-		backdrop-filter: blur(16px);
-		color: black;
-		display: flex;
-		justify-content: space-between;
-		padding: 16px;
-		position: sticky;
-		top: 0;
-		left: 0;
-		right: 0;
-
-		a {
-			color: black;
-			text-decoration: none;
-
-			&:hover {
-				text-decoration: underline;
-			}
-		}
 	}
 </style>
