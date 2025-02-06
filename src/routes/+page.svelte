@@ -6,7 +6,7 @@
 			title: 'PHOTOGRAPHY',
 			subtitle: 'Film | Canon AE-1, Olympus Mju',
 			description: 'Street, Landscape, & Studio',
-			image: '/images/MEXICO/000068470027.jpg',
+			image: '/images/MEXICO/000068470027 .jpeg',
 			alt: 'Vintage car photograph showing artistic perspective',
 			href: '/mexico'
 		},
