@@ -22,7 +22,6 @@
 <nav>
     <a href="/">Gabi Darza</a>
     <div>
-        <a href="/photography">Photography</a>
         <a href="/about">About</a>
     </div>
 </nav>
@@ -34,7 +33,8 @@
 
 <style>
     main {
-        padding: 16px;
+        padding: 20px;
+        align-content: center;
     }
     nav {
         background-color: rgba(255,255,255,.75);
@@ -42,9 +42,8 @@
         color: black;
         display: flex;
         justify-content: space-between;
-        padding: 16px;
-
         position: sticky;
+        padding: 20px;
         top: 0;
         left: 0;
         right: 0;

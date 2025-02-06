@@ -45,11 +45,13 @@
 		grid-template-columns: 1fr 1fr;
 		> div:first-child {
 			background: transparent;
+			align-content: center;
 		}
 
 		.profile-image {
 			background-image: url('/images/gabi.jpeg');
 			background-position: center;
+			border-radius: 1rem;
 		}
 
 		h1 {
