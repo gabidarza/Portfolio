@@ -1,14 +1,17 @@
 <script lang="ts">
 	import {images} from '$lib';
 	
-	const Mexico = [
-		{
-			title: 'Mexico',
-			subtitle: 'Photos',
-			image: '/images/MEXICO',
-			alt: 'Mexico',
-		}
-	]
+type Image = (typeof images)[number]
+
+function checkIfImageInMexico(image: Image):boolean {
+	
+console.log(image)
+return true;
+}
+
+const imagesInMexico = images.filter(checkIfImageInMexico)
+
+console.log(imagesInMexico)
 
 </script>
     
