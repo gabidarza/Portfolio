@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { images } from '$lib';
 
+	const availableLocations = [...new Set(images.map((image) => image.location))];
+
 	const categories = [
 		{
 			title: 'PHOTOGRAPHY',
@@ -15,41 +17,62 @@
 			subtitle: 'Mix | Paint, Pencil, Pen, Watercolor',
 			description: 'People, Places, & whatever feels right',
 			image: '/images/ART/lighter.png',
-			alt: 'Black and white sketch of a lighter'
+			alt: 'Black and white sketch of a lighter',
+			href: '/art'
 		},
 		{
 			title: 'DESIGN',
 			subtitle: 'Mix | Adobe CC, Procreate, Figma',
 			description: 'Branding, Graphic Design, & UX/UI',
 			image: '/images/DESIGN/guitar.jpg',
-			alt: 'Stylized guitar head silhouette'
+			alt: 'Stylized guitar head silhouette',
+			href: '/design'
+		},
+		{
+			title: 'Spain',
+			subtitle: 'Mix | Adobe CC, Procreate, Figma',
+			description: 'Branding, Graphic Design, & UX/UI',
+			image: '/images/DESIGN/guitar.jpg',
+			alt: 'Stylized guitar head silhouette',
+			href: '/spain'
 		}
 	];
+
+	const categoriesToUse = categories.map((category) => {
+		const overlap = availableLocations.find((location) => category.href === `/${location}`);
+
+		if (overlap?.length && overlap.length > 0) {
+			return category;
+		} else {
+			console.warn('Missing location data');
+		}
+	});
 </script>
 
 <section>
 	<div class="portfolio-grid">
-		{#each categories as category}
-			<a
-				href={category.href}
-				class="category-link"
-				aria-label="View {category.title.toLowerCase()} portfolio"
-			>
-				<div class="category-card">
-					<div class="image-container">
-						<img src={category.image} alt={category.alt} class="category-image" />
+		{#each categoriesToUse as category}
+			{#if category}
+				<a
+					href={category.href}
+					class="category-link"
+					aria-label="View {category.title.toLowerCase()} portfolio"
+				>
+					<div class="category-card">
+						<div class="image-container">
+							<img src={category.image} alt={category.alt} class="category-image" />
+						</div>
+						<div class="category-content">
+							<h2 class="category-title">{category.title}</h2>
+							<p class="category-subtitle">{category.subtitle}</p>
+							<p class="category-description">{category.description}</p>
+						</div>
 					</div>
-					<div class="category-content">
-						<h2 class="category-title">{category.title}</h2>
-						<p class="category-subtitle">{category.subtitle}</p>
-						<p class="category-description">{category.description}</p>
-					</div>
-				</div>
-			</a>
+				</a>
+			{/if}
 		{/each}
 	</div>
 </section>
-
 
 <style>
 	section {
@@ -65,9 +88,9 @@
 		@media (max-width: 1080px) {
 			grid-template-columns: 1fr;
 		}
-    a {
-      text-decoration: none;
-    }
+		a {
+			text-decoration: none;
+		}
 	}
 
 	.category-card {
@@ -77,9 +100,9 @@
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		transition: transform 0.3s ease;
 
-    &:hover {
-      text-decoration: underline;
-            }
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	.category-card:hover {
@@ -137,5 +160,4 @@
 		height: auto;
 		border-radius: 3px;
 	}
-
 </style>
